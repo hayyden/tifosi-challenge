@@ -93,9 +93,12 @@ fetch(`src/data/${todayString}.json`)
   })
   .then(challenge => {
     // validate challenge data
-    if (!challenge.answer || !challenge.image) {
+    if (!challenge.answer) {
       throw new Error('INVALID_CHALLENGE_DATA');
     }
+
+    // Auto-generate image path from date
+    challenge.image = `public/images/${todayString}.webp`;
 
     updateImageMetaTags(challenge);
 
