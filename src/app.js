@@ -48,44 +48,20 @@ function showErrorMessage(errorType) {
   `;
 }
 
-// Update meta tags based on today's challenge
-function updateMetaTags(challenge) {
-  const baseUrl = window.location.origin;
-  const imageUrl = `${baseUrl}/${challenge.image}`;
-  //const todayString = getTodayString();
+// Update image URL meta tags based on today's challenge
+function updateImageMetaTags(challenge) {
+  const baseURL = window.location.origin;
+  const imageURL = `${baseURL}/${challenge.image}`;
 
-  // Update meta description
-  //updateMetaTag('name', 'description', `Can you identify today's F1 circuit? Test your Formula 1 knowledge with our daily challenge for ${formattedDate}.`);
-
-  // Update Open Graph tags
-  //updateMetaTag('property', 'og:title', `Tifosi - ${todayString} Daily Motorsport Challenge`);
-  //updateMetaTag('property', 'og:description', `Can you identify today's motorsport race track? Test your Formula 1 knowledge with our daily challenge.`);
-  updateMetaTag('property', 'og:image', imageUrl);
-  updateMetaTag('property', 'og:url', window.location.href);
-
-  // Update Twitter Card tags
-  //updateMetaTag('name', 'twitter:title', `Tifosi - ${todayString} F1 Circuit Challenge`);
-  //updateMetaTag('name', 'twitter:description', `Can you identify today's F1 circuit? Test your Formula 1 knowledge with our daily challenge.`);
-  updateMetaTag('name', 'twitter:image', imageUrl);
+  // Open Graph
+  document.querySelector('meta[property="og:image"]').setAttribute('content', imageURL);
+  // Twitter
+  document.querySelector('meta[name="twitter:image"]').setAttribute('content', imageURL);
 }
 
 // Generate credit HTML from structured data
 function generateCreditHTML(credit) {
   return `<a href="${credit.pageUrl}">${credit.author}</a>, <a href="${credit.licenseUrl}">${credit.license}</a>, via ${credit.source}`;
-}
-
-// Helper function to update meta tags
-function updateMetaTag(attribute, name, content) {
-  let element = document.querySelector(`meta[${attribute}="${name}"]`);
-  if (element) {
-    element.setAttribute('content', content);
-  } else {
-    // Create the meta tag if it doesn't exist
-    element = document.createElement('meta');
-    element.setAttribute(attribute, name);
-    element.setAttribute('content', content);
-    document.head.appendChild(element);
-  }
 }
 
 const maxAttempts = 5;
@@ -121,7 +97,7 @@ fetch(`src/data/${todayString}.json`)
       throw new Error('INVALID_CHALLENGE_DATA');
     }
 
-    updateMetaTags(challenge);
+    updateImageMetaTags(challenge);
 
     renderGame(challenge);
   })
