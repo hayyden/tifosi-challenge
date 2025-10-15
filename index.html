@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Tifosi — Daily Motorsport Challenge</title>
+  <meta name="description" content="Test your motorsport knowledge with our daily race track challenge. New challenge every day!">
+  <meta name="keywords" content="F1, Formula 1, motorsport, racing, circuit, track, race track, guessing game, daily challenge, daily quiz">
+  <meta name="author" content="Tifosi">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tifosi — Daily Motorsport Challenge">
+  <meta property="og:description" content="Test your motorsport knowledge with our daily race track challenge. New challenge every day!">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="533">
+  <meta property="og:site_name" content="Tifosi">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tifosi — Daily Motorsport Challenge">
+  <meta name="twitter:description" content="Test your motorsport knowledge with our daily race track challenge. New challenge every day!">
+  <meta name="twitter:image" content="">
+  
+  <!-- Mobile/PWA -->
+  <meta name="theme-color" content="#1f2937">
+  <meta name="msapplication-TileColor" content="#1f2937">
+  <meta name="application-name" content="Tifosi">
+  <meta name="apple-mobile-web-app-title" content="Tifosi">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="src/style.css">
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Tifosi",
+    "description": "Daily motorsport race track challenge",
+    "url": "https://playtifosi.com",
+    "applicationCategory": "Game",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Tifosi"
+    }
+  }
+  </script>
+</head>
+
+<body class="bg-gray-100 font-sans text-gray-900">
+  <div class="max-w-4xl mx-auto p-4">
+    <h1 class="text-4xl font-bold text-center">PlayTifosi.com</h1>
+    <h2 class="text-xl font-medium text-center mb-4">Guess the race track.</h2>
+    <div id="game-root"></div>
+  </div>
+  <script src="src/app.js?v=2"></script>
+</body>
+
+</html>
