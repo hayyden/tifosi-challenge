@@ -1,6 +1,5 @@
-// Tifosi core logic. TODO: Google analytics; host website; Google adds; Github.
-// loads today's challenge and handles guesses
-console.log('Tifosi app.js loaded');
+// TODO: custom domain; remove image loading lag; one attempt per day; more images; fix favicon;
+console.log('Loaded');
 
 // date format: YYYY-MM-DD
 function getTodayString() {
